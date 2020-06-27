@@ -143,7 +143,7 @@ Partial Class FormPersona
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblPersonTitle)
         Me.Name = "FormPersona"
-        Me.Text = "Form1"
+        Me.Text = "Crear Persona"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

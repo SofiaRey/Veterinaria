@@ -113,7 +113,7 @@ Partial Class FormPet
         Me.Controls.Add(Me.txtbxName)
         Me.Controls.Add(Me.lblPetTitle)
         Me.Name = "FormPet"
-        Me.Text = "Form2"
+        Me.Text = "Crear Mascota"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
