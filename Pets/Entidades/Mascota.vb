@@ -1,5 +1,5 @@
 ﻿Public Class Mascota
-    Private _id Ad Integer
+    Private _id As Integer
     Private _dueno As Persona
     Private _nombre As String
     Private _anoNac As Integer

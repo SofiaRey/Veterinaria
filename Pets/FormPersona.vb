@@ -23,7 +23,7 @@
             newPersona.Nombre = nombre
             newPersona.Direccion = direccion
 
-            Dim logica As LogicaPersona
+            Dim logica As New LogicaPersona
             logica.altaPersona(newPersona)
 
         Catch ex As Exception
