@@ -28,23 +28,14 @@
             _direccion = value
         End Set
     End Property
-    Public Property Telefono As Integer
-        Get
-            Return _telefono
-        End Get
-        Set(value As Integer)
-            _telefono = value
-        End Set
-    End Property
 
     Public Sub persona()
 
     End Sub
-    Public Sub persona(ci_ As Integer, nombre_ As String, direccion_ As String, telefono_ As Integer)
+    Public Sub persona(ci_ As Integer, nombre_ As String, direccion_ As String)
         Ci = ci_
         Nombre = nombre_
         Direccion = direccion_
-        Telefono = telefono_
     End Sub
 
 End Class

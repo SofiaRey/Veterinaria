@@ -106,6 +106,12 @@
   <ItemGroup>
     <Compile Include="Entidades\Persona.vb" />
     <Compile Include="Entidades\Mascota.vb" />
+    <Compile Include="FormBuscarPersona.Designer.vb">
+      <DependentUpon>FormBuscarPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormInicio.Designer.vb">
       <DependentUpon>FormInicio.vb</DependentUpon>
     </Compile>
@@ -146,8 +152,17 @@
     <Compile Include="Persistencia\Conexion.vb" />
     <Compile Include="Persistencia\PersistenciaMascota.vb" />
     <Compile Include="Persistencia\PersistenciaPersona.vb" />
+    <Compile Include="FormTelefono.Designer.vb">
+      <DependentUpon>FormTelefono.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTelefono.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormBuscarPersona.resx">
+      <DependentUpon>FormBuscarPersona.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.vb</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPet.resx">
       <DependentUpon>FormPet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTelefono.resx">
+      <DependentUpon>FormTelefono.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

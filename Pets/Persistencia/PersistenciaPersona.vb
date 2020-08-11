@@ -27,7 +27,7 @@
         End Try
     End Sub
 
-    Public Sub altaTelefono(persona As Persona)
+    Public Sub altaTelefono(ci As Integer, telefono As Integer)
         Try
             Dim classcnn As New Conexion
             conexionPP = classcnn.AbrirConexion
@@ -40,8 +40,8 @@
             cadenaDeComandos = "INSERT INTO Telefono (ci, telefono) VALUES (@ci, @telefono);"
 
             cmd.CommandText = cadenaDeComandos
-            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Ci
-            cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Telefono
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+            cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = telefono
 
             Dim resultado As Integer
             resultado = cmd.ExecuteNonQuery()
@@ -63,7 +63,7 @@
             cmd.Connection = conexionPP
 
             Dim cadenaDeComandos As String
-            cadenaDeComandos = "SELECT * FROM PERSONAS WHERE ci = @ci"
+            cadenaDeComandos = "SELECT * FROM PERSONA WHERE ci = @ci"
 
             cmd.CommandText = cadenaDeComandos
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci

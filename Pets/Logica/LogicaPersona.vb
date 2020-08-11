@@ -4,9 +4,9 @@
         persistencia.altaPersona(personaUser)
     End Sub
 
-    Public Sub altaTelefono(persona As Persona)
+    Public Sub altaTelefono(ci As Integer, telefono As Integer)
         Dim persistencia = New PersistenciaPersona
-        persistencia.AltaTelefono(persona)
+        persistencia.altaTelefono(ci, telefono)
     End Sub
 
     Public Function buscarPersona(ci As Integer) As Persona
