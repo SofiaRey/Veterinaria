@@ -33,6 +33,8 @@ Partial Class FormPersona
         Me.lblPhone = New System.Windows.Forms.Label()
         Me.lblAdd = New System.Windows.Forms.Label()
         Me.btnAceptPersona = New System.Windows.Forms.Button()
+        Me.btnAddPhone = New System.Windows.Forms.Button()
+        Me.lvPhonesList = New System.Windows.Forms.ListView()
         Me.SuspendLayout()
         '
         'lblPersonTitle
@@ -69,14 +71,14 @@ Partial Class FormPersona
         '
         'txtbxPhone
         '
-        Me.txtbxPhone.Location = New System.Drawing.Point(283, 192)
+        Me.txtbxPhone.Location = New System.Drawing.Point(283, 236)
         Me.txtbxPhone.Name = "txtbxPhone"
         Me.txtbxPhone.Size = New System.Drawing.Size(224, 20)
         Me.txtbxPhone.TabIndex = 4
         '
         'txtbxAdd
         '
-        Me.txtbxAdd.Location = New System.Drawing.Point(283, 239)
+        Me.txtbxAdd.Location = New System.Drawing.Point(283, 187)
         Me.txtbxAdd.Name = "txtbxAdd"
         Me.txtbxAdd.Size = New System.Drawing.Size(224, 20)
         Me.txtbxAdd.TabIndex = 5
@@ -102,7 +104,7 @@ Partial Class FormPersona
         'lblPhone
         '
         Me.lblPhone.AutoSize = True
-        Me.lblPhone.Location = New System.Drawing.Point(280, 176)
+        Me.lblPhone.Location = New System.Drawing.Point(280, 220)
         Me.lblPhone.Name = "lblPhone"
         Me.lblPhone.Size = New System.Drawing.Size(49, 13)
         Me.lblPhone.TabIndex = 8
@@ -111,7 +113,7 @@ Partial Class FormPersona
         'lblAdd
         '
         Me.lblAdd.AutoSize = True
-        Me.lblAdd.Location = New System.Drawing.Point(280, 223)
+        Me.lblAdd.Location = New System.Drawing.Point(280, 171)
         Me.lblAdd.Name = "lblAdd"
         Me.lblAdd.Size = New System.Drawing.Size(52, 13)
         Me.lblAdd.TabIndex = 9
@@ -119,18 +121,40 @@ Partial Class FormPersona
         '
         'btnAceptPersona
         '
-        Me.btnAceptPersona.Location = New System.Drawing.Point(352, 284)
+        Me.btnAceptPersona.Location = New System.Drawing.Point(352, 282)
         Me.btnAceptPersona.Name = "btnAceptPersona"
         Me.btnAceptPersona.Size = New System.Drawing.Size(86, 25)
         Me.btnAceptPersona.TabIndex = 10
         Me.btnAceptPersona.Text = "Aceptar"
         Me.btnAceptPersona.UseVisualStyleBackColor = True
         '
+        'btnAddPhone
+        '
+        Me.btnAddPhone.Location = New System.Drawing.Point(526, 231)
+        Me.btnAddPhone.Name = "btnAddPhone"
+        Me.btnAddPhone.Size = New System.Drawing.Size(34, 25)
+        Me.btnAddPhone.TabIndex = 11
+        Me.btnAddPhone.Text = "+"
+        Me.btnAddPhone.UseVisualStyleBackColor = True
+        '
+        'lvPhonesList
+        '
+        Me.lvPhonesList.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lvPhonesList.HideSelection = False
+        Me.lvPhonesList.Location = New System.Drawing.Point(579, 231)
+        Me.lvPhonesList.Name = "lvPhonesList"
+        Me.lvPhonesList.Size = New System.Drawing.Size(163, 136)
+        Me.lvPhonesList.TabIndex = 12
+        Me.lvPhonesList.UseCompatibleStateImageBehavior = False
+        Me.lvPhonesList.View = System.Windows.Forms.View.List
+        '
         'FormPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lvPhonesList)
+        Me.Controls.Add(Me.btnAddPhone)
         Me.Controls.Add(Me.btnAceptPersona)
         Me.Controls.Add(Me.lblAdd)
         Me.Controls.Add(Me.lblPhone)
@@ -160,4 +184,6 @@ Partial Class FormPersona
     Friend WithEvents lblPhone As Label
     Friend WithEvents lblAdd As Label
     Friend WithEvents btnAceptPersona As Button
+    Friend WithEvents btnAddPhone As Button
+    Friend WithEvents lvPhonesList As ListView
 End Class

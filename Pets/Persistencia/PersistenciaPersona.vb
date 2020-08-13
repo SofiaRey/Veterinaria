@@ -20,6 +20,18 @@
 
             Dim resultado As Integer
             resultado = cmd.ExecuteNonQuery()
+
+            If resultado = 1 Then
+                Dim i = 0
+                While i < persona.Telefonos.Count
+                    query = "INSERT INTO Telefono (ci, telefono) VALUES (@ci, @telefono);"
+
+                    cmd.CommandText = query
+                    cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Ci
+                    cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Telefonos.Item(i)
+                    i = i + 1
+                End While
+            End If
         Catch ex As Exception
             Throw ex
         Finally
@@ -27,24 +39,31 @@
         End Try
     End Sub
 
-    Public Sub altaTelefono(ci As Integer, telefono As Integer)
+    Public Sub altaTelefono(persona As Persona)
         Try
+
             Dim classcnn As New Conexion
             conexionPP = classcnn.AbrirConexion
 
             Dim cmd = New Npgsql.NpgsqlCommand
 
             cmd.Connection = conexionPP
-
             Dim cadenaDeComandos As String
-            cadenaDeComandos = "INSERT INTO Telefono (ci, telefono) VALUES (@ci, @telefono);"
-
-            cmd.CommandText = cadenaDeComandos
-            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
-            cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = telefono
 
             Dim resultado As Integer
             resultado = cmd.ExecuteNonQuery()
+
+            If resultado = 1 Then
+                Dim i = 0
+                While i < persona.Telefonos.Count
+                    cadenaDeComandos = "INSERT INTO Telefono (ci, telefono) VALUES (@ci, @telefono);"
+
+                    cmd.CommandText = cadenaDeComandos
+                    cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Ci
+                    cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Telefonos.Item(i)
+                    i = i + 1
+                End While
+            End If
         Catch ex As Exception
             Throw ex
         Finally

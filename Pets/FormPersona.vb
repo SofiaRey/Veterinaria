@@ -1,4 +1,5 @@
 ﻿Public Class FormPersona
+    Dim ListaTelefonos As New List(Of Integer)
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblPersonTitle.Click
 
     End Sub
@@ -22,6 +23,7 @@
             newPersona.Ci = ci
             newPersona.Nombre = nombre
             newPersona.Direccion = direccion
+            newPersona.Telefonos = ListaTelefonos
 
             Dim logica As New LogicaPersona
             logica.altaPersona(newPersona)
@@ -29,5 +31,23 @@
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub lblPhone_Click(sender As Object, e As EventArgs) Handles lblPhone.Click
+
+    End Sub
+
+    Private Sub txtbxPhone_TextChanged(sender As Object, e As EventArgs) Handles txtbxPhone.TextChanged
+
+    End Sub
+
+    Private Sub btnAddPhone_Click(sender As Object, e As EventArgs) Handles btnAddPhone.Click
+        Dim telefono As Integer
+        telefono = txtbxPhone.Text
+
+        lvPhonesList.Items.Add(telefono)
+        ListaTelefonos.Add(telefono)
+
+        txtbxPhone.Text = ""
     End Sub
 End Class
