@@ -4,31 +4,35 @@
     Public Sub altaPersona(persona As Persona)
         Try
             Dim classcnn = New Conexion
-            conexionPP = classcnn.AbrirConexion
+            conexionPP = classcnn.AbrirConexion()
 
-            Dim cmd = New Npgsql.NpgsqlCommand
-
+            Dim cmd = New Npgsql.NpgsqlCommand()
             cmd.Connection = conexionPP
 
-            Dim query As String
-            query = "INSERT INTO PERSONA (ci, nombre, direccion) VALUES (@ci, @nombre, @direccion);"
-
+            Dim query = "INSERT INTO PERSONA (ci, nombre, direccion) VALUES (@ci, @nombre, @direccion);"
             cmd.CommandText = query
+
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Ci
             cmd.Parameters.Add("@nombre", NpgsqlTypes.NpgsqlDbType.Varchar, 50).Value = persona.Nombre
             cmd.Parameters.Add("@direccion", NpgsqlTypes.NpgsqlDbType.Varchar, 50).Value = persona.Direccion
 
             Dim resultado As Integer
+
             resultado = cmd.ExecuteNonQuery()
 
             If resultado = 1 Then
                 Dim i = 0
-                While i < persona.Telefonos.Count
+                Dim tels As New List(Of Integer)
+                tels.Add(1234)
+                tels.Add(5678)
+                While i < tels.Count
                     query = "INSERT INTO Telefono (ci, telefono) VALUES (@ci, @telefono);"
-
                     cmd.CommandText = query
+
                     cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Ci
-                    cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Telefonos.Item(i)
+                    cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = tels.Item(i)
+
+                    resultado = cmd.ExecuteNonQuery()
                     i = i + 1
                 End While
             End If
