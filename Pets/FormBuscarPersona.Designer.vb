@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormBuscarPersona
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormBuscarPersona
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnAceptTelephone = New System.Windows.Forms.Button()
         Me.lblCI = New System.Windows.Forms.Label()
@@ -29,8 +29,10 @@ Partial Class FormBuscarPersona
         Me.lblSearchPersonTitle = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblAddress = New System.Windows.Forms.Label()
-        Me.lblNameToComplete = New System.Windows.Forms.Label()
-        Me.lblAddressToComplete = New System.Windows.Forms.Label()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.lbltelephones = New System.Windows.Forms.Label()
+        Me.txtbxNameToComplete = New System.Windows.Forms.TextBox()
+        Me.txtbxAddressToComplete = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnAceptTelephone
@@ -88,37 +90,53 @@ Partial Class FormBuscarPersona
         'lblAddress
         '
         Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(79, 296)
+        Me.lblAddress.Location = New System.Drawing.Point(79, 283)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(55, 13)
         Me.lblAddress.TabIndex = 30
         Me.lblAddress.Text = "Direccion:"
         '
-        'lblNameToComplete
+        'btnModificar
         '
-        Me.lblNameToComplete.AutoSize = True
-        Me.lblNameToComplete.Location = New System.Drawing.Point(132, 259)
-        Me.lblNameToComplete.Name = "lblNameToComplete"
-        Me.lblNameToComplete.Size = New System.Drawing.Size(16, 13)
-        Me.lblNameToComplete.TabIndex = 31
-        Me.lblNameToComplete.Text = "..."
+        Me.btnModificar.Location = New System.Drawing.Point(180, 356)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(79, 25)
+        Me.btnModificar.TabIndex = 33
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'lblAddressToComplete
+        'lbltelephones
         '
-        Me.lblAddressToComplete.AutoSize = True
-        Me.lblAddressToComplete.Location = New System.Drawing.Point(140, 296)
-        Me.lblAddressToComplete.Name = "lblAddressToComplete"
-        Me.lblAddressToComplete.Size = New System.Drawing.Size(16, 13)
-        Me.lblAddressToComplete.TabIndex = 32
-        Me.lblAddressToComplete.Text = "..."
+        Me.lbltelephones.AutoSize = True
+        Me.lbltelephones.Location = New System.Drawing.Point(79, 306)
+        Me.lbltelephones.Name = "lbltelephones"
+        Me.lbltelephones.Size = New System.Drawing.Size(57, 13)
+        Me.lbltelephones.TabIndex = 34
+        Me.lbltelephones.Text = "Telefonos:"
+        '
+        'txtbxNameToComplete
+        '
+        Me.txtbxNameToComplete.Location = New System.Drawing.Point(132, 256)
+        Me.txtbxNameToComplete.Name = "txtbxNameToComplete"
+        Me.txtbxNameToComplete.Size = New System.Drawing.Size(224, 20)
+        Me.txtbxNameToComplete.TabIndex = 36
+        '
+        'txtbxAddressToComplete
+        '
+        Me.txtbxAddressToComplete.Location = New System.Drawing.Point(140, 280)
+        Me.txtbxAddressToComplete.Name = "txtbxAddressToComplete"
+        Me.txtbxAddressToComplete.Size = New System.Drawing.Size(224, 20)
+        Me.txtbxAddressToComplete.TabIndex = 37
         '
         'FormBuscarPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.lblAddressToComplete)
-        Me.Controls.Add(Me.lblNameToComplete)
+        Me.Controls.Add(Me.txtbxAddressToComplete)
+        Me.Controls.Add(Me.txtbxNameToComplete)
+        Me.Controls.Add(Me.lbltelephones)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.lblAddress)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.btnAceptTelephone)
@@ -140,6 +158,8 @@ Partial Class FormBuscarPersona
     Friend WithEvents lblSearchPersonTitle As Label
     Friend WithEvents lblName As Label
     Friend WithEvents lblAddress As Label
-    Friend WithEvents lblNameToComplete As Label
-    Friend WithEvents lblAddressToComplete As Label
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents lbltelephones As Label
+    Friend WithEvents txtbxNameToComplete As TextBox
+    Friend WithEvents txtbxAddressToComplete As TextBox
 End Class

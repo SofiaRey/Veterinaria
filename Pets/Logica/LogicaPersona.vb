@@ -14,4 +14,9 @@
 
         Return persistencia.BuscarPersona(ci)
     End Function
+
+    Public Function modificarPersona(ci As Integer, name As String, address As String)
+        Dim persistencia = New PersistenciaPersona
+        persistencia.modificarPersona(ci, name, address)
+    End Function
 End Class

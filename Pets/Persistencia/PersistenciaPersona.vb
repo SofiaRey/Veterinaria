@@ -26,6 +26,9 @@
                 tels.Add(1234)
                 tels.Add(5678)
                 While i < tels.Count
+                    cmd = New Npgsql.NpgsqlCommand()
+                    cmd.Connection = conexionPP
+
                     query = "INSERT INTO Telefono (ci, telefono) VALUES (@ci, @telefono);"
                     cmd.CommandText = query
 
@@ -41,6 +44,27 @@
         Finally
             conexionPP.Close()
         End Try
+    End Sub
+
+    Public Sub modificarPersona(ci As Integer, name As String, address As String)
+        Dim persona As New Persona
+        Dim classcnn As New Conexion
+        conexionPP = classcnn.AbrirConexion
+
+        Dim cmd = New Npgsql.NpgsqlCommand
+
+        cmd.Connection = conexionPP
+
+        Dim cadenaDeComandos As String
+        ' UPDATE persona SET nombre = 'Gonzalo Nun', direccion = 'A. Legnani 6742' WHERE ci = 14725836;
+        cadenaDeComandos = "UPDATE PERSONA SET nombre = @nombre, direccion = @direccion WHERE ci = @ci"
+
+        cmd.CommandText = cadenaDeComandos
+        cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+        cmd.Parameters.Add("@nombre", NpgsqlTypes.NpgsqlDbType.Varchar, 50).Value = name
+        cmd.Parameters.Add("@direccion", NpgsqlTypes.NpgsqlDbType.Varchar, 50).Value = address
+
+        Dim lector As Npgsql.NpgsqlDataReader = cmd.ExecuteReader()
     End Sub
 
     Public Sub altaTelefono(persona As Persona)

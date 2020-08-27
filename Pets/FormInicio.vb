@@ -15,10 +15,6 @@
         FormPet.Show()
     End Sub
 
-    Private Sub AltaTelefonoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaTelefonoToolStripMenuItem.Click
-        FormTelefono.Show()
-    End Sub
-
     Private Sub BuscarPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarPersonaToolStripMenuItem.Click
         FormBuscarPersona.Show()
     End Sub

@@ -50,4 +50,8 @@
 
         txtbxPhone.Text = ""
     End Sub
+
+    Private Sub FormPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

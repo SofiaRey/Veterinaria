@@ -26,7 +26,6 @@ Partial Class FormInicio
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AltaPersoanaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaMascotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AltaTelefonoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -44,7 +43,7 @@ Partial Class FormInicio
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaPersoanaToolStripMenuItem, Me.AltaMascotaToolStripMenuItem, Me.AltaTelefonoToolStripMenuItem, Me.BuscarPersonaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaPersoanaToolStripMenuItem, Me.AltaMascotaToolStripMenuItem, Me.BuscarPersonaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -62,12 +61,6 @@ Partial Class FormInicio
         Me.AltaMascotaToolStripMenuItem.Name = "AltaMascotaToolStripMenuItem"
         Me.AltaMascotaToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
         Me.AltaMascotaToolStripMenuItem.Text = "Alta Mascota"
-        '
-        'AltaTelefonoToolStripMenuItem
-        '
-        Me.AltaTelefonoToolStripMenuItem.Name = "AltaTelefonoToolStripMenuItem"
-        Me.AltaTelefonoToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
-        Me.AltaTelefonoToolStripMenuItem.Text = "Alta Telefono"
         '
         'BuscarPersonaToolStripMenuItem
         '
@@ -99,6 +92,5 @@ Partial Class FormInicio
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents AltaPersoanaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AltaMascotaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AltaTelefonoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuscarPersonaToolStripMenuItem As ToolStripMenuItem
 End Class
