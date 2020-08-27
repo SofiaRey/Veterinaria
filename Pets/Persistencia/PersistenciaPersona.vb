@@ -25,7 +25,7 @@
                 Dim tels As New List(Of Integer)
                 tels.Add(1234)
                 tels.Add(5678)
-                While i < tels.Count
+                While i < persona.Telefonos.Count
                     cmd = New Npgsql.NpgsqlCommand()
                     cmd.Connection = conexionPP
 
@@ -33,7 +33,7 @@
                     cmd.CommandText = query
 
                     cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Ci
-                    cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = tels.Item(i)
+                    cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Telefonos.Item(i)
 
                     resultado = cmd.ExecuteNonQuery()
                     i = i + 1
