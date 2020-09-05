@@ -54,4 +54,30 @@
     Private Sub FormPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub lvPhonesList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvPhonesList.SelectedIndexChanged
+        Try
+            Dim tel As String
+            Dim telDel As Integer
+            tel = lvPhonesList.SelectedItems(0).SubItems(0).Text
+            telDel = Convert.ToInt32(tel)
+
+            Dim i = 0
+            While i < ListaTelefonos.Count
+                If telDel = ListaTelefonos.Item(i) Then
+                    ListaTelefonos.Remove(telDel)
+                    i = ListaTelefonos.Count
+                End If
+                i = i + 1
+            End While
+            lvPhonesList.Clear()
+            i = 0
+            While i < ListaTelefonos.Count
+                lvPhonesList.Items.Add(ListaTelefonos(i))
+                i = i + 1
+            End While
+        Catch ex As Exception
+            MsgBox("Tuviste un error" + ex.Message)
+        End Try
+    End Sub
 End Class

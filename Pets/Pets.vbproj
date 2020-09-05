@@ -118,12 +118,6 @@
     <Compile Include="FormInicio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormModPersona.Designer.vb">
-      <DependentUpon>FormModPersona.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormModPersona.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormPersona.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -165,9 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormModPersona.resx">
-      <DependentUpon>FormModPersona.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPersona.resx">
       <DependentUpon>FormPersona.vb</DependentUpon>

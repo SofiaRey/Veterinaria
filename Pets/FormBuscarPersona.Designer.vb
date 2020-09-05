@@ -33,6 +33,9 @@ Partial Class FormBuscarPersona
         Me.lbltelephones = New System.Windows.Forms.Label()
         Me.txtbxNameToComplete = New System.Windows.Forms.TextBox()
         Me.txtbxAddressToComplete = New System.Windows.Forms.TextBox()
+        Me.lvPhonesList = New System.Windows.Forms.ListView()
+        Me.btnAddPhone = New System.Windows.Forms.Button()
+        Me.txtbxPhone = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnAceptTelephone
@@ -81,7 +84,7 @@ Partial Class FormBuscarPersona
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(79, 259)
+        Me.lblName.Location = New System.Drawing.Point(79, 239)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(47, 13)
         Me.lblName.TabIndex = 29
@@ -90,7 +93,7 @@ Partial Class FormBuscarPersona
         'lblAddress
         '
         Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(79, 283)
+        Me.lblAddress.Location = New System.Drawing.Point(79, 263)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(55, 13)
         Me.lblAddress.TabIndex = 30
@@ -98,7 +101,7 @@ Partial Class FormBuscarPersona
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(180, 356)
+        Me.btnModificar.Location = New System.Drawing.Point(208, 367)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(79, 25)
         Me.btnModificar.TabIndex = 33
@@ -108,7 +111,7 @@ Partial Class FormBuscarPersona
         'lbltelephones
         '
         Me.lbltelephones.AutoSize = True
-        Me.lbltelephones.Location = New System.Drawing.Point(79, 306)
+        Me.lbltelephones.Location = New System.Drawing.Point(79, 286)
         Me.lbltelephones.Name = "lbltelephones"
         Me.lbltelephones.Size = New System.Drawing.Size(57, 13)
         Me.lbltelephones.TabIndex = 34
@@ -116,23 +119,53 @@ Partial Class FormBuscarPersona
         '
         'txtbxNameToComplete
         '
-        Me.txtbxNameToComplete.Location = New System.Drawing.Point(132, 256)
+        Me.txtbxNameToComplete.Location = New System.Drawing.Point(132, 236)
         Me.txtbxNameToComplete.Name = "txtbxNameToComplete"
         Me.txtbxNameToComplete.Size = New System.Drawing.Size(224, 20)
         Me.txtbxNameToComplete.TabIndex = 36
         '
         'txtbxAddressToComplete
         '
-        Me.txtbxAddressToComplete.Location = New System.Drawing.Point(140, 280)
+        Me.txtbxAddressToComplete.Location = New System.Drawing.Point(140, 260)
         Me.txtbxAddressToComplete.Name = "txtbxAddressToComplete"
         Me.txtbxAddressToComplete.Size = New System.Drawing.Size(224, 20)
         Me.txtbxAddressToComplete.TabIndex = 37
+        '
+        'lvPhonesList
+        '
+        Me.lvPhonesList.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lvPhonesList.HideSelection = False
+        Me.lvPhonesList.Location = New System.Drawing.Point(436, 281)
+        Me.lvPhonesList.Name = "lvPhonesList"
+        Me.lvPhonesList.Size = New System.Drawing.Size(163, 136)
+        Me.lvPhonesList.TabIndex = 40
+        Me.lvPhonesList.UseCompatibleStateImageBehavior = False
+        Me.lvPhonesList.View = System.Windows.Forms.View.List
+        '
+        'btnAddPhone
+        '
+        Me.btnAddPhone.Location = New System.Drawing.Point(383, 281)
+        Me.btnAddPhone.Name = "btnAddPhone"
+        Me.btnAddPhone.Size = New System.Drawing.Size(34, 25)
+        Me.btnAddPhone.TabIndex = 39
+        Me.btnAddPhone.Text = "+"
+        Me.btnAddPhone.UseVisualStyleBackColor = True
+        '
+        'txtbxPhone
+        '
+        Me.txtbxPhone.Location = New System.Drawing.Point(140, 286)
+        Me.txtbxPhone.Name = "txtbxPhone"
+        Me.txtbxPhone.Size = New System.Drawing.Size(224, 20)
+        Me.txtbxPhone.TabIndex = 38
         '
         'FormBuscarPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lvPhonesList)
+        Me.Controls.Add(Me.btnAddPhone)
+        Me.Controls.Add(Me.txtbxPhone)
         Me.Controls.Add(Me.txtbxAddressToComplete)
         Me.Controls.Add(Me.txtbxNameToComplete)
         Me.Controls.Add(Me.lbltelephones)
@@ -162,4 +195,7 @@ Partial Class FormBuscarPersona
     Friend WithEvents lbltelephones As Label
     Friend WithEvents txtbxNameToComplete As TextBox
     Friend WithEvents txtbxAddressToComplete As TextBox
+    Friend WithEvents lvPhonesList As ListView
+    Friend WithEvents btnAddPhone As Button
+    Friend WithEvents txtbxPhone As TextBox
 End Class
