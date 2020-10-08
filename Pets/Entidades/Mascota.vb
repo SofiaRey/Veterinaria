@@ -1,6 +1,6 @@
 ﻿Public Class Mascota
     Private _id As Integer
-    Private _dueno As Persona
+    Private _dueno As Integer
     Private _nombre As String
     Private _anoNac As Integer
 
@@ -12,11 +12,11 @@
             _id = value
         End Set
     End Property
-    Public Property Dueno As Persona
+    Public Property Dueno As Integer
         Get
             Return _dueno
         End Get
-        Set(value As Persona)
+        Set(value As Integer)
             _dueno = value
         End Set
     End Property
@@ -42,7 +42,7 @@
 
     End Sub
 
-    Public Sub mascota(id_ As Integer, dueno_ As Persona, nombre_ As String, anoNac_ As Integer)
+    Public Sub mascota(id_ As Integer, dueno_ As Integer, nombre_ As String, anoNac_ As Integer)
         Id = id_
         Dueno = dueno_
         Nombre = nombre_

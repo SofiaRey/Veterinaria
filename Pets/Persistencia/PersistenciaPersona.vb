@@ -22,9 +22,6 @@
 
             If resultado = 1 Then
                 Dim i = 0
-                Dim tels As New List(Of Integer)
-                tels.Add(1234)
-                tels.Add(5678)
                 While i < persona.Telefonos.Count
                     cmd = New Npgsql.NpgsqlCommand()
                     cmd.Connection = conexionPP
@@ -83,22 +80,30 @@
             cmd.CommandText = cadenaDeComandos
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
 
-            Dim lector As Npgsql.NpgsqlDataReader = cmd.ExecuteReader()
 
-            If lector.HasRows Then
-                lector.Read()
-                persona.Ci = Convert.ToInt32(lector(0).ToString)
-                persona.Nombre = lector(1).ToString
-                persona.Direccion = lector(2).ToString
-            End If
+            Using lector = cmd.ExecuteReader()
 
-            cadenaDeComandos = "select * from persona inner join telefono on persona.ci = telefono.ci where persona.ci = @ci"
+                If lector.HasRows Then
+                    lector.Read()
+                    persona.Ci = Convert.ToInt32(lector(0).ToString)
+                    persona.Nombre = lector(1).ToString
+                    persona.Direccion = lector(2).ToString
+                End If
+
+            End Using
+
+            Dim lector2 As Npgsql.NpgsqlDataReader
+
+            cadenaDeComandos = "select telefono.telefono from persona inner join telefono on persona.ci = telefono.ci where persona.ci = @ci"
 
             cmd.CommandText = cadenaDeComandos
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+            lector2 = cmd.ExecuteReader()
 
-            If lector.HasRows Then
-                lector.Read()
+            If lector2.HasRows Then
+                While lector2.Read()
+                    persona.Telefonos.Add(lector2(0).ToString)
+                End While
 
             End If
 
