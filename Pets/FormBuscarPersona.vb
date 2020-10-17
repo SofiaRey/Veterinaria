@@ -82,4 +82,22 @@
 
         txtbxPhone.Text = ""
     End Sub
+
+    Private Sub btnDeletePerson_Click(sender As Object, e As EventArgs) Handles btnDeletePerson.Click
+        Try
+            Dim logica = New LogicaPersona
+
+            Dim ci As Integer
+            ci = txtbxCI.Text
+
+            logica.eliminarPersona(txtbxCI.Text)
+
+            txtbxCI.Clear()
+            txtbxAddressToComplete.Clear()
+            txtbxNameToComplete.Clear()
+            txtbxPhone.Clear()
+            lvPhonesList.Items.Clear()
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

@@ -20,4 +20,10 @@
         Dim personas As List(Of Persona) = persistencia.listarPersona
         Return personas
     End Function
+
+    Public Sub eliminarPersona(ci As Integer)
+        Dim persistencia = New PersistenciaPersona
+
+        persistencia.eliminarPersona(ci)
+    End Sub
 End Class

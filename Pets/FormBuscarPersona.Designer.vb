@@ -36,6 +36,7 @@ Partial Class FormBuscarPersona
         Me.lvPhonesList = New System.Windows.Forms.ListView()
         Me.btnAddPhone = New System.Windows.Forms.Button()
         Me.txtbxPhone = New System.Windows.Forms.TextBox()
+        Me.btnDeletePerson = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSearchPerson
@@ -158,11 +159,21 @@ Partial Class FormBuscarPersona
         Me.txtbxPhone.Size = New System.Drawing.Size(224, 20)
         Me.txtbxPhone.TabIndex = 38
         '
+        'btnDeletePerson
+        '
+        Me.btnDeletePerson.Location = New System.Drawing.Point(709, 413)
+        Me.btnDeletePerson.Name = "btnDeletePerson"
+        Me.btnDeletePerson.Size = New System.Drawing.Size(79, 25)
+        Me.btnDeletePerson.TabIndex = 41
+        Me.btnDeletePerson.Text = "ELIMINAR"
+        Me.btnDeletePerson.UseVisualStyleBackColor = True
+        '
         'FormBuscarPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnDeletePerson)
         Me.Controls.Add(Me.lvPhonesList)
         Me.Controls.Add(Me.btnAddPhone)
         Me.Controls.Add(Me.txtbxPhone)
@@ -198,4 +209,5 @@ Partial Class FormBuscarPersona
     Friend WithEvents lvPhonesList As ListView
     Friend WithEvents btnAddPhone As Button
     Friend WithEvents txtbxPhone As TextBox
+    Friend WithEvents btnDeletePerson As Button
 End Class

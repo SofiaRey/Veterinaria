@@ -191,4 +191,34 @@
             conexionPP.Close()
         End Try
     End Function
+
+    Public Sub eliminarPersona(ci As Integer)
+        Try
+            Dim classcnn As New Conexion
+            conexionPP = classcnn.AbrirConexion
+
+            Dim cmd = New Npgsql.NpgsqlCommand
+
+            cmd.Connection = conexionPP
+
+            Dim cadenaDeComandos As String
+            cadenaDeComandos = "DELETE FROM TELEFONO WHERE ci = @ci"
+
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+
+            cmd.ExecuteNonQuery()
+
+            cadenaDeComandos = "DELETE FROM PERSONA WHERE ci = @ci"
+
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexionPP.Close()
+        End Try
+    End Sub
 End Class
