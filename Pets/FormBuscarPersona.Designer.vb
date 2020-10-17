@@ -22,7 +22,7 @@ Partial Class FormBuscarPersona
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnAceptTelephone = New System.Windows.Forms.Button()
+        Me.btnSearchPerson = New System.Windows.Forms.Button()
         Me.lblCI = New System.Windows.Forms.Label()
         Me.txtbxCI = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,14 +38,14 @@ Partial Class FormBuscarPersona
         Me.txtbxPhone = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'btnAceptTelephone
+        'btnSearchPerson
         '
-        Me.btnAceptTelephone.Location = New System.Drawing.Point(353, 193)
-        Me.btnAceptTelephone.Name = "btnAceptTelephone"
-        Me.btnAceptTelephone.Size = New System.Drawing.Size(86, 25)
-        Me.btnAceptTelephone.TabIndex = 28
-        Me.btnAceptTelephone.Text = "Buscar"
-        Me.btnAceptTelephone.UseVisualStyleBackColor = True
+        Me.btnSearchPerson.Location = New System.Drawing.Point(353, 193)
+        Me.btnSearchPerson.Name = "btnSearchPerson"
+        Me.btnSearchPerson.Size = New System.Drawing.Size(86, 25)
+        Me.btnSearchPerson.TabIndex = 28
+        Me.btnSearchPerson.Text = "Buscar"
+        Me.btnSearchPerson.UseVisualStyleBackColor = True
         '
         'lblCI
         '
@@ -172,7 +172,7 @@ Partial Class FormBuscarPersona
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.lblAddress)
         Me.Controls.Add(Me.lblName)
-        Me.Controls.Add(Me.btnAceptTelephone)
+        Me.Controls.Add(Me.btnSearchPerson)
         Me.Controls.Add(Me.lblCI)
         Me.Controls.Add(Me.txtbxCI)
         Me.Controls.Add(Me.Label2)
@@ -184,7 +184,7 @@ Partial Class FormBuscarPersona
 
     End Sub
 
-    Friend WithEvents btnAceptTelephone As Button
+    Friend WithEvents btnSearchPerson As Button
     Friend WithEvents lblCI As Label
     Friend WithEvents txtbxCI As TextBox
     Friend WithEvents Label2 As Label

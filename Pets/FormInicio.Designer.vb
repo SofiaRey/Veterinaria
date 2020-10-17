@@ -27,6 +27,7 @@ Partial Class FormInicio
         Me.AltaPersoanaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaMascotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListarPersonasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -43,7 +44,7 @@ Partial Class FormInicio
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaPersoanaToolStripMenuItem, Me.AltaMascotaToolStripMenuItem, Me.BuscarPersonaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaPersoanaToolStripMenuItem, Me.AltaMascotaToolStripMenuItem, Me.BuscarPersonaToolStripMenuItem, Me.ListarPersonasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -67,6 +68,12 @@ Partial Class FormInicio
         Me.BuscarPersonaToolStripMenuItem.Name = "BuscarPersonaToolStripMenuItem"
         Me.BuscarPersonaToolStripMenuItem.Size = New System.Drawing.Size(99, 20)
         Me.BuscarPersonaToolStripMenuItem.Text = "Buscar Persona"
+        '
+        'ListarPersonasToolStripMenuItem
+        '
+        Me.ListarPersonasToolStripMenuItem.Name = "ListarPersonasToolStripMenuItem"
+        Me.ListarPersonasToolStripMenuItem.Size = New System.Drawing.Size(97, 20)
+        Me.ListarPersonasToolStripMenuItem.Text = "Listar Personas"
         '
         'FormInicio
         '
@@ -93,4 +100,5 @@ Partial Class FormInicio
     Friend WithEvents AltaPersoanaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AltaMascotaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuscarPersonaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListarPersonasToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -43,25 +43,64 @@
         End Try
     End Sub
 
-    Public Sub modificarPersona(ci As Integer, name As String, address As String)
-        Dim persona As New Persona
-        Dim classcnn As New Conexion
-        conexionPP = classcnn.AbrirConexion
+    Public Sub modificarPersona(persona As Persona)
+        Try
+            Dim classcnn As New Conexion
+            conexionPP = classcnn.AbrirConexion
 
-        Dim cmd = New Npgsql.NpgsqlCommand
+            Dim cmd = New Npgsql.NpgsqlCommand
 
-        cmd.Connection = conexionPP
+            cmd.Connection = conexionPP
 
-        Dim cadenaDeComandos As String
-        ' UPDATE persona SET nombre = 'Gonzalo Nun', direccion = 'A. Legnani 6742' WHERE ci = 14725836;
-        cadenaDeComandos = "UPDATE PERSONA SET nombre = @nombre, direccion = @direccion WHERE ci = @ci"
+            Dim cadenaDeComandos As String
+            ' UPDATE persona SET nombre = 'Gonzalo Nun', direccion = 'A. Legnani 6742' WHERE ci = 14725836;
+            cadenaDeComandos = "UPDATE PERSONA SET nombre = @nombre, direccion = @direccion WHERE ci = @ci"
 
-        cmd.CommandText = cadenaDeComandos
-        cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
-        cmd.Parameters.Add("@nombre", NpgsqlTypes.NpgsqlDbType.Varchar, 50).Value = name
-        cmd.Parameters.Add("@direccion", NpgsqlTypes.NpgsqlDbType.Varchar, 50).Value = address
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Ci
+            cmd.Parameters.Add("@nombre", NpgsqlTypes.NpgsqlDbType.Varchar, 50).Value = persona.Nombre
+            cmd.Parameters.Add("@direccion", NpgsqlTypes.NpgsqlDbType.Varchar, 50).Value = persona.Direccion
 
-        Dim lector As Npgsql.NpgsqlDataReader = cmd.ExecuteReader()
+            cmd.ExecuteNonQuery()
+
+            cadenaDeComandos = "DELETE FROM TELEFONO WHERE ci = @ci"
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = persona.Ci
+            cmd.ExecuteNonQuery()
+
+            For Each telefono As Integer In persona.Telefonos
+                altaTelefono(persona.Ci, telefono)
+            Next
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexionPP.Close()
+        End Try
+    End Sub
+
+    Public Sub altaTelefono(ci As Integer, telefono As Integer)
+        Try
+            Dim classcnn As New Conexion
+            conexionPP = classcnn.AbrirConexion
+
+            Dim cmd = New Npgsql.NpgsqlCommand
+
+            cmd.Connection = conexionPP
+
+            Dim cadenaDeComandos As String
+            cadenaDeComandos = "INSERT INTO TELEFONO (ci, telefono) VALUES (@ci, @telefono)"
+
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+            cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = telefono
+
+            Dim resultado As Integer
+            resultado = cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexionPP.Close()
+        End Try
     End Sub
 
     Public Function buscarPersona(ci As Integer) As Persona
@@ -94,20 +133,58 @@
 
             Dim lector2 As Npgsql.NpgsqlDataReader
 
-            cadenaDeComandos = "select telefono.telefono from persona inner join telefono on persona.ci = telefono.ci where persona.ci = @ci"
+            ' cadenaDeComandos = "select telefono.telefono from persona inner join telefono on persona.ci = telefono.ci where persona.ci = @ci"
+            cadenaDeComandos = "SELECT * FROM TELEFONO WHERE ci = @ci"
 
             cmd.CommandText = cadenaDeComandos
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+
             lector2 = cmd.ExecuteReader()
 
             If lector2.HasRows Then
                 While lector2.Read()
-                    persona.Telefonos.Add(lector2(0).ToString)
+                    persona.Telefonos.Add(Convert.ToInt32(lector2(1).ToString))
                 End While
-
             End If
 
             Return persona
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexionPP.Close()
+        End Try
+    End Function
+
+    Public Function listarPersona() As List(Of Persona)
+        Try
+            Dim listaPersonas As New List(Of Persona)
+
+            Dim classcnn As New Conexion
+            conexionPP = classcnn.AbrirConexion
+
+            Dim cmd = New Npgsql.NpgsqlCommand
+
+            cmd.Connection = conexionPP
+
+            Dim cadenaDeComandos As String
+            cadenaDeComandos = "SELECT * FROM PERSONA"
+
+            cmd.CommandText = cadenaDeComandos
+
+            Dim Lector As Npgsql.NpgsqlDataReader
+            Lector = cmd.ExecuteReader
+
+            If Lector.HasRows Then
+                While Lector.Read()
+                    Dim persona As New Persona
+                    persona.Ci = Convert.ToInt32(Lector(0).ToString)
+                    persona.Nombre = Lector(1).ToString
+                    persona.Direccion = Lector(2).ToString
+                    listaPersonas.Add(persona)
+                End While
+            End If
+
+            Return listaPersonas
         Catch ex As Exception
             Throw ex
         Finally

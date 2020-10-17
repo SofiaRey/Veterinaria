@@ -4,7 +4,7 @@
 
     End Sub
 
-    Private Sub btnAceptTelephone_Click(sender As Object, e As EventArgs) Handles btnAceptTelephone.Click
+    Private Sub btnSearchPerson_Click(sender As Object, e As EventArgs) Handles btnSearchPerson.Click
         Dim ci As Integer
         ci = txtbxCI.Text
 
@@ -14,6 +14,10 @@
         persona = logica.buscarPersona(ci)
 
         ListaTelefonos = persona.Telefonos
+
+        For Each telefono As Integer In ListaTelefonos
+            lvPhonesList.Items.Add(telefono)
+        Next
 
         txtbxNameToComplete.Text = persona.Nombre
         txtbxAddressToComplete.Text = persona.Direccion
@@ -31,36 +35,16 @@
 
         Dim logica = New LogicaPersona
 
-        Dim persona As Persona
-        persona = logica.modificarPersona(ci, name, address)
-    End Sub
+        Dim persona As New Persona
+        persona.Ci = ci
+        persona.Nombre = name
+        persona.Direccion = address
 
-    Private Sub Label3_Click_1(sender As Object, e As EventArgs) Handles lbltelephones.Click
+        For Each telefono As ListViewItem In lvPhonesList.Items
+            persona.Telefonos.Add(Convert.ToInt32(telefono.Text.ToString))
+        Next
 
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub lblNameToComplete_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtbxPhone_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnAddPhone_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub lvPhonesList_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs)
-
+        logica.modificarPersona(persona)
     End Sub
 
     Private Sub lvPhonesList_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles lvPhonesList.SelectedIndexChanged

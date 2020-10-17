@@ -18,4 +18,8 @@
     Private Sub BuscarPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarPersonaToolStripMenuItem.Click
         FormBuscarPersona.Show()
     End Sub
+
+    Private Sub ListarPersonasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarPersonasToolStripMenuItem.Click
+        FormListarPersonas.Show()
+    End Sub
 End Class
