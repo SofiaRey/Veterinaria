@@ -1,5 +1,5 @@
 ﻿Public Class FormListarPersonas
-    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
+    Private Sub FormListarPersonas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             lbPersonas.Items.Clear()
             Dim logica = New LogicaPersona
@@ -12,5 +12,9 @@
             Next
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub lbPersonas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbPersonas.SelectedIndexChanged
+
     End Sub
 End Class

@@ -131,9 +131,10 @@
 
             End Using
 
+
+
             Dim lector2 As Npgsql.NpgsqlDataReader
 
-            ' cadenaDeComandos = "select telefono.telefono from persona inner join telefono on persona.ci = telefono.ci where persona.ci = @ci"
             cadenaDeComandos = "SELECT * FROM TELEFONO WHERE ci = @ci"
 
             cmd.CommandText = cadenaDeComandos
@@ -203,6 +204,13 @@
 
             Dim cadenaDeComandos As String
             cadenaDeComandos = "DELETE FROM TELEFONO WHERE ci = @ci"
+
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+
+            cmd.ExecuteNonQuery()
+
+            cadenaDeComandos = "DELETE FROM MASCOTA WHERE ci = @ci"
 
             cmd.CommandText = cadenaDeComandos
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
