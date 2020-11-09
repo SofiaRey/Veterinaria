@@ -210,7 +210,7 @@
 
             cmd.ExecuteNonQuery()
 
-            cadenaDeComandos = "DELETE FROM MASCOTA WHERE ci = @ci"
+            cadenaDeComandos = "DELETE FROM MASCOTAS WHERE ci = @ci"
 
             cmd.CommandText = cadenaDeComandos
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci

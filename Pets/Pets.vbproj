@@ -106,6 +106,18 @@
   <ItemGroup>
     <Compile Include="Entidades\Persona.vb" />
     <Compile Include="Entidades\Mascota.vb" />
+    <Compile Include="FormAltaMascota.Designer.vb">
+      <DependentUpon>FormAltaMascota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAltaMascota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarMascota.Designer.vb">
+      <DependentUpon>FormBuscarMascota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarMascota.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormBuscarPersona.Designer.vb">
       <DependentUpon>FormBuscarPersona.vb</DependentUpon>
     </Compile>
@@ -116,6 +128,12 @@
       <DependentUpon>FormInicio.vb</DependentUpon>
     </Compile>
     <Compile Include="FormInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarMascotas.Designer.vb">
+      <DependentUpon>FormListarMascotas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarMascotas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormListarPersonas.Designer.vb">
@@ -160,11 +178,17 @@
     <Compile Include="Persistencia\PersistenciaPersona.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormBuscarMascota.resx">
+      <DependentUpon>FormBuscarMascota.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarPersona.resx">
       <DependentUpon>FormBuscarPersona.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarMascotas.resx">
+      <DependentUpon>FormListarMascotas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListarPersonas.resx">
       <DependentUpon>FormListarPersonas.vb</DependentUpon>

@@ -19,4 +19,11 @@
         FormListarPersonas.Show()
     End Sub
 
+    Private Sub ListarMascotasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarMascotasToolStripMenuItem.Click
+        FormListarMascotas.Show()
+    End Sub
+
+    Private Sub BuscarMascotaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarMascotaToolStripMenuItem.Click
+        FormBuscarMascota.Show()
+    End Sub
 End Class

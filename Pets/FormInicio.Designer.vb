@@ -28,6 +28,8 @@ Partial Class FormInicio
         Me.AltaMascotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarPersonasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListarMascotasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarMascotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -44,7 +46,7 @@ Partial Class FormInicio
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaPersoanaToolStripMenuItem, Me.AltaMascotaToolStripMenuItem, Me.BuscarPersonaToolStripMenuItem, Me.ListarPersonasToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaPersoanaToolStripMenuItem, Me.AltaMascotaToolStripMenuItem, Me.BuscarPersonaToolStripMenuItem, Me.ListarPersonasToolStripMenuItem, Me.ListarMascotasToolStripMenuItem, Me.BuscarMascotaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -75,6 +77,18 @@ Partial Class FormInicio
         Me.ListarPersonasToolStripMenuItem.Size = New System.Drawing.Size(97, 20)
         Me.ListarPersonasToolStripMenuItem.Text = "Listar Personas"
         '
+        'ListarMascotasToolStripMenuItem
+        '
+        Me.ListarMascotasToolStripMenuItem.Name = "ListarMascotasToolStripMenuItem"
+        Me.ListarMascotasToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
+        Me.ListarMascotasToolStripMenuItem.Text = "Listar Mascotas"
+        '
+        'BuscarMascotaToolStripMenuItem
+        '
+        Me.BuscarMascotaToolStripMenuItem.Name = "BuscarMascotaToolStripMenuItem"
+        Me.BuscarMascotaToolStripMenuItem.Size = New System.Drawing.Size(102, 20)
+        Me.BuscarMascotaToolStripMenuItem.Text = "Buscar Mascota"
+        '
         'FormInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -101,4 +115,6 @@ Partial Class FormInicio
     Friend WithEvents AltaMascotaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuscarPersonaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListarPersonasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListarMascotasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BuscarMascotaToolStripMenuItem As ToolStripMenuItem
 End Class
